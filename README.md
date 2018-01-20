@@ -7,7 +7,7 @@
 ---
 | Author        | E-mail  
 | :--: |:--:
-| *Achilles-10* |<Achilles.zhanghy@gmail.com>
+| [*Achilles-10*](https://github.com/Achilles-10) |<Achilles.zhanghy@gmail.com>
 
 
 ---
@@ -21,5 +21,5 @@
 
 
 ---
-- 答案全部为本人所写，仅供参考，如有问题，欢迎issue
-- 由于是在自学C++的同时写答案，所以随时有烂尾的可能 （*手动滑稽*
+- 答案全部为本人所写，仅供参考，如有问题，欢迎邮箱
+- 由于是在自学C++的同时写答案，所以会根据学习进度同步更新，但随时有烂尾的可能 （*笑*
