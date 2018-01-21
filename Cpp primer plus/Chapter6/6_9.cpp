@@ -18,12 +18,12 @@ int main() {
 	}
 	int num, flag = 0;
 	fin >> num;
-	fin.get();
+	fin.get(); // clear '\n'
 	patron *donors = new patron[num];
 	for (int i = 0; i < num; ++i) {
 		getline(fin, donors[i].name);
 		fin >> donors[i].donation;
-		fin.get();
+		fin.get(); // clear '\n'
 	}
 	cout << "Grand Patrons:\n";
 	for (int j = 0; j < num; ++j)
