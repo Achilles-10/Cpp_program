@@ -17,7 +17,7 @@
 - [ 第4章 复合类型 ](https://github.com/Achilles-10/Cpp_program/tree/master/Cpp%20primer%20plus/Chapter4)
 - [ 第5章 循环和关系表达式 ](https://github.com/Achilles-10/Cpp_program/tree/master/Cpp%20primer%20plus/Chapter5)
 - [ 第6章 分支语句和逻辑运算符](https://github.com/Achilles-10/Cpp_program/tree/master/Cpp%20primer%20plus/Chapter6)
-
+- [ 第7章 函数——C++的编程模块](https://github.com/Achilles-10/Cpp_program/tree/master/Cpp%20primer%20plus/Chapter7)
 
 ---
 - 答案全部为本人所写，仅供参考，如有问题，欢迎邮箱
