@@ -7,13 +7,7 @@ template<typename T>
 T maxn(T [], int);
 
 template<>
-char *maxn(char *arr[], int n) {
-	int max = 0;
-	for (int i = 1; i < n; ++i)
-		if (strlen(arr[i]) > strlen(arr[max]))
-			max = i;
-	return arr[max];
-}
+char *maxn(char *arr[], int n);
 
 int main() {
 	int array1[6] = {3, 1, 5, 9, 2, 6};
@@ -36,4 +30,13 @@ T maxn(T arr[], int n) {
 		if (arr[i] > max)
 			max = arr[i];
 	return max;
+}
+
+template<>
+char *maxn(char *arr[], int n) {
+	int max = 0;
+	for (int i = 1; i < n; ++i)
+		if (strlen(arr[i]) > strlen(arr[max]))
+			max = i;
+	return arr[max];
 }
