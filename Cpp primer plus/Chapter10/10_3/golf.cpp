@@ -7,10 +7,17 @@ Golf::Golf(const std::string name, int hc) {
 }
 
 
-const Golf &Golf::setgolf(const Golf &g) {
-	fullname = g.fullname;
-	handicap = g.handicap;
-	return *this;
+void Golf::setgolf() {
+	std::string name;
+	int handi;
+	std::cout << "Please enter fullname:\n";
+	while (!(getline(std::cin, name)))
+		std::cout << "Wrong! Please enter again:\n";
+	std::cout << "Now enter handicap:\n";
+	while (!(std::cin >> handi))
+		std::cout << "Wrong! Please enter again:\n";
+	std::cin.get();
+	*this = Golf(name, handi);
 }
 
 void Golf::hanfun(int hc) {

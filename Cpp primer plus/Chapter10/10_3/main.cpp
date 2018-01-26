@@ -7,7 +7,7 @@ int main() {
 	Golf g1;
 	Golf g2("Achilles", 1999);
 	Golf g3;
-	g3.setgolf(g2);
+	g3.setgolf();
 	cout << "g1:\n";
 	g1.showgolf();
 	cout << "g2:\n";

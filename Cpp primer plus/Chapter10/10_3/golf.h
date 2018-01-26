@@ -13,7 +13,7 @@ public:
 
 	Golf(const std::string name, int hc);
 
-	const Golf &setgolf(const Golf & g);
+	void setgolf();
 
 	void hanfun(int hc);
 
