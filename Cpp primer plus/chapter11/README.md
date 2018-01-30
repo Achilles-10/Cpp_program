@@ -5,7 +5,8 @@ Screen shots
 ---
 
 **11_1**
->![11_1](https://raw.githubusercontent.com/Achilles-10/Cpp_program/master/Cpp%20primer%20plus/Chapter11/screen%20shots/11_1.png)
+>![11_1](https://raw.githubusercontent.com/Achilles-10/Cpp_program/master/Cpp%20primer%20plus/Chapter11/screen%20shots/11_1_1.png)
+>![11_1](https://raw.githubusercontent.com/Achilles-10/Cpp_program/master/Cpp%20primer%20plus/Chapter11/screen%20shots/11_1_2.png)
 
 **11_2**
 >![11_2](https://raw.githubusercontent.com/Achilles-10/Cpp_program/master/Cpp%20primer%20plus/Chapter11/screen%20shots/11_2.png)
