@@ -23,6 +23,8 @@
 - [ 第10章 对象和类 ](https://github.com/Achilles-10/Cpp_program/tree/master/Cpp%20primer%20plus/Chapter10)
 - [ 第11章 使用类 ](https://github.com/Achilles-10/Cpp_program/tree/master/Cpp%20primer%20plus/Chapter11)
 - [ 第12章 类和动态内存分配 ](https://github.com/Achilles-10/Cpp_program/tree/master/Cpp%20primer%20plus/Chapter12)
+- [ 第13章 类继承 ](https://github.com/Achilles-10/Cpp_program/tree/master/Cpp%20primer%20plus/Chapter13)
+
 
 ---
 - 答案全部为本人所写，仅供参考，如有问题，欢迎邮箱
