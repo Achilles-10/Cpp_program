@@ -1,0 +1,3 @@
+D:/learning/C_practice_update/Cpp_program/2048/cmake-build-debug/CMakeFiles/2048.dir
+D:/learning/C_practice_update/Cpp_program/2048/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/learning/C_practice_update/Cpp_program/2048/cmake-build-debug/CMakeFiles/rebuild_cache.dir
