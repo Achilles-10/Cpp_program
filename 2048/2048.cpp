@@ -5,6 +5,10 @@
 
 using namespace std;
 
+Board::Board() : turn(0) {
+	SetUpBoard();
+}
+
 void Board::Draw() const {
 	string help[4] = {};
 	enum {
@@ -86,7 +90,9 @@ void Board::MatrixTransform() {
 	}
 }
 
-void Board::RowTightn(int row) {
+
+//left
+void Board::RowTighten(int row) {
 	int i, j, count = 0;
 	int new_row[Size] = {0};
 	for (int column = 0; column < Size; ++column) {
@@ -131,15 +137,12 @@ void Board::RowMerge(int row) {
 
 void Board::MatrixTighten() {
 	for (int row = 0; row < Size; ++row)
-		RowTightn(row);
+		RowTighten(row);
 }
 
 void Board::MatrixMerge() {
-	for (int row = 0; row < Size; ++row) {
-		RowTightn(row);
+	for (int row = 0; row < Size; ++row)
 		RowMerge(row);
-		RowTightn(row);
-	}
 }
 
 bool Board::CanMoveRow(int row) const {
@@ -173,4 +176,56 @@ bool Board::IsWin() const {
 		}
 	}
 	return false;
+}
+
+bool Board::GameEnd() {
+	if (IsWin() || IsLose())
+		return true;
+	else
+		return false;
+}
+
+void Board::MoveLeftMatirx() {
+	MatrixTighten();
+	MatrixMerge();
+	MatrixTighten();
+}
+
+void Board::MoveRightMatrix() {
+	MatrixInvert();
+	MoveLeftMatirx();
+	MatrixInvert();
+}
+
+void Board::MoveUpMatrix() {
+	MatrixTransform();
+	MoveLeftMatirx();
+	MatrixTransform();
+}
+
+void Board::MoveDownMatrix() {
+	MatrixTransform();
+	MoveRightMatrix();
+	MatrixTransform();
+}
+
+
+void Manager::MoveLeft() {
+	Board::MoveLeftMatirx();
+}
+
+void Manager::MoveRight() {
+	Board::MoveRightMatrix();
+}
+
+void Manager::MoveUp() {
+	Board::MoveUpMatrix();
+}
+
+void Manager::MoveDown() {
+	Board::MoveDownMatrix();
+}
+
+void Manager::Restart() {
+	Board::RestartGame();
 }

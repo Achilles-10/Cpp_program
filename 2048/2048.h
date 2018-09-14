@@ -44,18 +44,10 @@ private:
 
 	//void CopyBoard();
 
-	void GameEnd();
-
-	void MoveLeftRow();
-
-	void MoveRightRow();
-
-	void MoveUpRow();
-
-	void MoveDownRow();
-
 	void RowInvert(int row);
-	void RowTightn(int row);
+
+	void RowTighten(int row);
+
 	void RowMerge(int row);
 
 	void MatrixTransform();//矩阵转置
@@ -66,6 +58,8 @@ private:
 	bool CanMoveRow(int row) const;
 
 	bool CanMoveMatrix() const;
+
+	bool GameEnd();
 
 	bool IsWin() const;
 
