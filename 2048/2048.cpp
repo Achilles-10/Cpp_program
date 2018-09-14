@@ -10,10 +10,30 @@ Board::Board() : turn(0) {
 }
 
 void Board::Draw() const {
-	string help[4] = {};
+	string help[3] = {"\t2048 Game","Moves: Arrow Keys, R - Reset, ESC - Exit","Let the biggest number in the corner"};
 	enum {
 		Title, Operation, Tips
 	};
+
+	system("cls");
+
+	cout << help[Title]<<endl <<endl;
+	cout << "Turn: " << turn << endl << endl << endl;
+	for (int i = 0; i <Size ; ++i) {
+		cout << "\t |";
+		for (int j = 0; j < Size; ++j) {
+			if (Table_Now[i][j].GetState())
+				printf("%4d |",Table_Now[i][j].GetValue());
+			else
+				printf("%4c |",' a ');
+		}
+
+		cout << endl << endl;
+	}
+	cout << endl << help[Operation] << endl << endl;
+	cout << "Tips:  " << help[Tips] << endl;
+
+
 }
 
 int Board::RandomNum() const {
@@ -178,11 +198,24 @@ bool Board::IsWin() const {
 	return false;
 }
 
-bool Board::GameEnd() {
+bool Board::IsEnd () const {
 	if (IsWin() || IsLose())
 		return true;
 	else
 		return false;
+}
+
+bool Board::AfterMove() {
+	if (!IsEnd()) {
+		AddRandomNum();
+		turn++;
+		Draw();
+	}
+
+	else if (IsWin()) {
+		Draw();
+		cout << "";
+	}
 }
 
 void Board::MoveLeftMatirx() {
@@ -229,3 +262,4 @@ void Manager::MoveDown() {
 void Manager::Restart() {
 	Board::RestartGame();
 }
+

@@ -59,7 +59,9 @@ private:
 
 	bool CanMoveMatrix() const;
 
-	bool GameEnd();
+	bool AfterMove();
+
+	bool IsEnd() const ;
 
 	bool IsWin() const;
 
