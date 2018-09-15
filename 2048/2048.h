@@ -71,7 +71,7 @@ private:
 public:
 	Board();
 
-	void MoveLeftMatirx();
+	void MoveLeftMatrix();
 
 	void MoveRightMatrix();
 
@@ -83,22 +83,6 @@ public:
 	//添加后退前进操作
 	//void LastMatrix();
 	//void NextMatrix();
-};
-
-
-class Manager : public Board {
-public:
-	void MoveLeft();
-
-	void MoveRight();
-
-	void MoveUp();
-
-	void MoveDown();
-
-	void Restart();
-	//void Forward();
-	//void Back();
 };
 
 

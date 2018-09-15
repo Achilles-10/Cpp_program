@@ -10,22 +10,23 @@ Board::Board() : turn(0) {
 }
 
 void Board::Draw() const {
-	string help[3] = {"\t2048 Game","Moves: Arrow Keys, R - Reset, ESC - Exit","Let the biggest number in the corner"};
+	string help[3] = {"\t2048 Game", "Moves: Arrow Keys, R - Reset, ESC - Exit",
+	                  "Let the biggest number in the corner"};
 	enum {
 		Title, Operation, Tips
 	};
 
 	system("cls");
 
-	cout << help[Title]<<endl <<endl;
+	cout << help[Title] << endl << endl;
 	cout << "Turn: " << turn << endl << endl << endl;
-	for (int i = 0; i <Size ; ++i) {
+	for (int i = 0; i < Size; ++i) {
 		cout << "\t |";
 		for (int j = 0; j < Size; ++j) {
 			if (Table_Now[i][j].GetState())
-				printf("%4d |",Table_Now[i][j].GetValue());
+				printf("%4d |", Table_Now[i][j].GetValue());
 			else
-				printf("%4c |",' a ');
+				printf("%4c |", ' a ');
 		}
 
 		cout << endl << endl;
@@ -198,7 +199,7 @@ bool Board::IsWin() const {
 	return false;
 }
 
-bool Board::IsEnd () const {
+bool Board::IsEnd() const {
 	if (IsWin() || IsLose())
 		return true;
 	else
@@ -210,56 +211,47 @@ bool Board::AfterMove() {
 		AddRandomNum();
 		turn++;
 		Draw();
+		return true;
 	}
 
 	else if (IsWin()) {
 		Draw();
-		cout << "";
+		cout << "\n\n\tCongratulations!\t\nYou Win!!!\n\t<ESC to quit>\n";
+		return false;
+	}
+
+	else if (IsEnd()) {
+		Draw();
+		cout << "\n\n\tGame Over\n <ESC to quit>";
+		return false;
 	}
 }
 
-void Board::MoveLeftMatirx() {
+void Board::MoveLeftMatrix() {
 	MatrixTighten();
 	MatrixMerge();
 	MatrixTighten();
+	AfterMove();
 }
 
 void Board::MoveRightMatrix() {
 	MatrixInvert();
-	MoveLeftMatirx();
+	MoveLeftMatrix();
 	MatrixInvert();
+	AfterMove();
 }
 
 void Board::MoveUpMatrix() {
 	MatrixTransform();
-	MoveLeftMatirx();
+	MoveLeftMatrix();
 	MatrixTransform();
+	AfterMove();
 }
 
 void Board::MoveDownMatrix() {
 	MatrixTransform();
 	MoveRightMatrix();
 	MatrixTransform();
-}
-
-
-void Manager::MoveLeft() {
-	Board::MoveLeftMatirx();
-}
-
-void Manager::MoveRight() {
-	Board::MoveRightMatrix();
-}
-
-void Manager::MoveUp() {
-	Board::MoveUpMatrix();
-}
-
-void Manager::MoveDown() {
-	Board::MoveDownMatrix();
-}
-
-void Manager::Restart() {
-	Board::RestartGame();
+	AfterMove();
 }
 

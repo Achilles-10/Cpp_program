@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/learning/C_practice_update/Cpp_program/2048/2048.cpp
+2048.h
+D:/learning/C_practice_update/Cpp_program/2048/2048.h
+iostream
+-
+string
+-
+cstdlib
+-
+
+D:/learning/C_practice_update/Cpp_program/2048/2048.h
+
+D:/learning/C_practice_update/Cpp_program/2048/main.cpp
+2048.h
+D:/learning/C_practice_update/Cpp_program/2048/2048.h
+Windows.h
+-
+
