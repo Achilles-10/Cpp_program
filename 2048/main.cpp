@@ -17,7 +17,7 @@ void Run() {
 			BoardPt->RestartGame();
 		else if (GetAsyncKeyState(VK_ESCAPE))
 			break;
-		Sleep(150);
+		Sleep(200);
 	}
 	delete BoardPt;
 }

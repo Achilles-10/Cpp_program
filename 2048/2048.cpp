@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -38,6 +39,7 @@ void Board::Draw() const {
 }
 
 int Board::RandomNum() const {
+	srand(time(NULL));
 	int temp = rand() % 100 + 1;
 	if (temp > 80)
 		return 4;
@@ -168,7 +170,7 @@ void Board::MatrixMerge() {
 
 bool Board::CanMoveRow(int row) const {
 	for (int i = 0; i < Size; ++i) {
-		if (!Table_Now[row][i].GetState() && Table_Now[row][i + 1].GetState())
+		if (!Table_Now[row][i].GetState())
 			return true;
 		else if (Table_Now[row][i].GetState() &&
 		         Table_Now[row][i].GetValue() == Table_Now[row][i + 1].GetValue())
@@ -177,19 +179,27 @@ bool Board::CanMoveRow(int row) const {
 	return false;
 }
 
-bool Board::CanMoveMatrix() const {
+bool Board::CanMoveMatrix() {
 	for (int row = 0; row < Size; ++row) {
 		if (CanMoveRow(row))
 			return true;
 	}
+	MatrixTransform();
+	for (int row = 0; row < Size; ++row) {
+		if (CanMoveRow(row)) {
+			MatrixTransform();
+			return true;
+		}
+	}
+	MatrixTransform();
 	return false;
 }
 
-bool Board::IsLose() const {
+bool Board::IsLose() {
 	return !CanMoveMatrix();
 }
 
-bool Board::IsWin() const {
+bool Board::IsWin() {
 	for (int i = 0; i < Size; ++i) {
 		for (int j = 0; j < Size; ++j) {
 			if (Table_Now[i][j].GetValue() == 2048)
@@ -199,32 +209,29 @@ bool Board::IsWin() const {
 	return false;
 }
 
-bool Board::IsEnd() const {
-	if (IsWin() || IsLose())
-		return true;
-	else
-		return false;
-}
 
 bool Board::AfterMove() {
-	if (!IsEnd()) {
+	bool Win, Lose;
+	Win = IsWin();
+	Lose = IsLose();
+	if (Win) {
+		Draw();
+		cout << "\n\n\tCongratulations!\t\nYou Win!!!\n\t<ESC to quit>\n";
+		return false;
+	}
+
+	else if (Lose) {
+		Draw();
+		cout << "\n\n\tGame Over\n <ESC to quit>";
+		return false;
+	}
+	else {
 		AddRandomNum();
 		turn++;
 		Draw();
 		return true;
 	}
 
-	else if (IsWin()) {
-		Draw();
-		cout << "\n\n\tCongratulations!\t\nYou Win!!!\n\t<ESC to quit>\n";
-		return false;
-	}
-
-	else if (IsEnd()) {
-		Draw();
-		cout << "\n\n\tGame Over\n <ESC to quit>";
-		return false;
-	}
 }
 
 void Board::MoveLeftMatrix() {

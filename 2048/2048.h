@@ -57,15 +57,13 @@ private:
 
 	bool CanMoveRow(int row) const;
 
-	bool CanMoveMatrix() const;
+	bool CanMoveMatrix();
 
 	bool AfterMove();
 
-	bool IsEnd() const ;
+	bool IsWin();
 
-	bool IsWin() const;
-
-	bool IsLose() const;
+	bool IsLose();
 
 
 public:
