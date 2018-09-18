@@ -1,10 +1,8 @@
 #include <iostream>
 #include <string>
+#include <stdexcept>
 
 class bad_hmean : public std::logic_error {
-private:
-	double v1;
-	double v2;
 public:
 	bad_hmean(const std::string &s = "hmean() invalid arguments: a = -b\n")
 			: logic_error(s) {}
