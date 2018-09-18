@@ -16,7 +16,4 @@ Screen shots
 **15_4**
 >![15_4](https://raw.githubusercontent.com/Achilles-10/Cpp_program/master/Cpp%20primer%20plus/Chapter15/screen%20shots/15_4.png)
 
-**15_5**
->![15_5](https://raw.githubusercontent.com/Achilles-10/Cpp_program/master/Cpp%20primer%20plus/Chapter15/screen%20shots/15_5.png)
-
 ---
