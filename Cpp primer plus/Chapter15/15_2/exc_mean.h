@@ -1,26 +1,15 @@
 #include <iostream>
+#include <string>
 
-class bad_hmean : public std::exception {
-private:
-	double v1;
-	double v2;
+class bad_hmean : public std::logic_error {
 public:
-	bad_hmean(double a = 0, double b = 0) : v1(a), v2(b) {}
-
-	void what() {
-		std::cout << "hmean(" << v1 << ", " << v2 << "): "
-		          << "invalid arguments: a = -b\n";
-	}
+	bad_hmean(const std::string &s = "hmean() invalid arguments: a = -b\n")
+			: logic_error(s) {}
 };
 
-class bad_gmean : public std::exception {
+class bad_gmean : public std::logic_error {
 public:
-	double v1;
-	double v2;
+	bad_gmean(const std::string &s = "gmean() arguments should be >= 0\n")
+			: logic_error(s) {}
 
-	bad_gmean(double a = 0, double b = 0) : v1(a), v2(b) {}
-
-	void what() {
-		std::cout << "gmean() arguments should be >= 0\n";
-	}
 };
