@@ -25,6 +25,7 @@
 - [ 第12章 类和动态内存分配 ](https://github.com/Achilles-10/Cpp_program/tree/master/Cpp%20primer%20plus/Chapter12)
 - [ 第13章 类继承 ](https://github.com/Achilles-10/Cpp_program/tree/master/Cpp%20primer%20plus/Chapter13)
 - [ 第14章 C++中的代码重用 ](https://github.com/Achilles-10/Cpp_program/tree/master/Cpp%20primer%20plus/Chapter14)
+- [ 第15章 友元、异常和其他 ](https://github.com/Achilles-10/Cpp_program/tree/master/Cpp%20primer%20plus/Chapter15)
 
 
 ---
